@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Project 1</title>
+    <meta http-equiv="refresh" content="3">
+    <style>
+    a.links1:link {
+        color: green;
+    }
+    a.links1:visited {
+        color: pink;
+    }
+    a.links1:hover {
+        color: red;
+    }
+    a.links1:active {
+        color: yellow;
+    }
+    a.links2:link, a.links2:visited {
+        background-color: red;
+        color: white;
+        padding: 15px 25px;
+        display: inline-block;
+    }
+    a.links2:hover, a.links2:active {
+        background-color: blue;
+    }
+    .tables1 table, th, td {
+        border: 1px solid black;
+    }
+    .tables1 th,td {
+        padding: 15px;
+    }
+    table.tables1  {
+        border-spacing: 5px;
+    }
+    </style>
+</head> 
+<body style="height:10000px;">
+    <h1 style="font-size: 60px">font-size：60px</h1>
+    <h1 style="font-size: 300%;">font-size: 300%</h1>
+    <h1>&lt;h1&gt; defines the most important heading</h1>
+    <h6>&lt;h6&gt; defines the least important heading</h6>
+    <pre>
+        &lt;pre&gt; element defines
+        preformatted text.
+    </pre>
+    <p style="font-family: courier;">font-family:courier</p>
+    <b>&lt;b&gt;bold</b><br>
+    <strong>&lt;strong&gt;</strong><br>
+    <i>&lt;i&gt;italic</i><br>
+    <em>&lt;em&gt;</em>
+    <h2>HTML <small>&lt;Small&gt;</small> Formatting</h2>
+    <h2>HTML <mark>&lt;mark&gt;</mark> Formatting</h2>
+    <p><del>&lt;delete&gt;</del></p>
+    <p><ins>&lt;ins&gt; insert</ins></p>
+    <p>This is <sub> &lt;sub&gt; subscript</sub> and <sup>&lt;sup&gt; superscript</sup></p>
+    <p><q>&lt;q&gt;</q></p>
+    <blockquote>&lt;blockquote cite=""&gt;</blockquote>
+    <p><abbr title="World Health Organization">&lt;abbr title="World Health Organization"&gt;WHO&lt;/abbr&gt;</abbr></p>
+    <address>&lt;address&gt; display in italic</address>
+    <cite>&lt;cite&gt; display in italic</cite><br>
+    <bdo dir="rtl">&lt;bdo dir="rtl"&gt;</bdo> original is &lt;bdo dir="rtl"&gt;
+    <p>&lt;!-- Comments --&gt;</p>
+    <p style="background-color: rgb(255,99,71)">background-color: rgb(255,99,71) and #ff6347 (hex value) and hsl(9,100%,64%) , default alpha is 1</p>
+    <p style="background-color: rgba(255,99,71,0.5)">background-color: rgba(255,99,71,0.5) and hsl(9,100%,64%,0.5)</p>
+    <a href="">&lt;a href=""&gt;</a><br>
+    <a class="links1" href="#">a:link and a:visited and a:hover and a:active {color:green/pink/red/yellow}</a><br>
+    <a class="links2" href="#">a.link, a.visited {background-color: red; color: white; padding: 15px 25px; display: inline-block}<br>a:hover, a:active { background-color: blue; } <br> The purpose of inline-block can prevent to overlap last link.</a><br>
+    <a href="#" target="_blank">&lt;a href="#" target="_blank"&gt; opens the linked document in a new window. <br> _self and _parent and _top opens the linked document in the same window (this is default).</a><br>
+    <p>Click &lt;a href="#C4"&gt;Chapter 4&lt;/a&gt; or &lt;a href="html_demo.html#C4"&gt; <br> Jump to &lt;h2 id="C4"&gt;Chapter 4&lt;/h2&gt;</p>
+    <p>&lt;img src="img_girl.jpg" alt="girl" width="500" height="600" or style="width:500px; height:600px"&gt; style attribute is better</p>
+    <p>&lt;img src="/images/html5.gif" or src="https://"&gt; images in sub-folder or another server</p>
+    <a href="#">
+        &lt;a href="#"&gt;<br> &lt;img src="smiley.gif" alt="img" title="img"&gt;<br>&lt;/a&gt;<br> Image as a link. The title attribute speifies extra information when the mouse oves over the element. <br><img src="smily.gif" alt="img" title="img">
+    </a>
+    <p><img src="smiley.gif" alt="Smiley face" style="float: right; width:42px; height:42px;">float:right attribute float the image to the right and float:left attribute float the image to the left</p>
+    <p>
+        &lt;map name="workmap"&gt;<br>&lt;area shape="rect" coords="34,44,270,350" href="#" alt="Computer"&gt;<br>&lt;area shape="rect" coords="290,172,333,250" href="#" alt="Phone"&gt;<br>&lt;area shape="circle" coords="337,300,44" href="#" alt="Cup of coffee"&gt;<br>&lt;/map&gt;   
+    </p>
+    <img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" href="#" alt="Computer">
+        <area shape="rect" coords="290,172,333,250" href="#" alt="Phone">
+        <area shape="circle" coords="337,300,44" href="#" alt="Cup of coffee">
+    </map>
+    <p style="background-image: url('clouds.jpg'); height:100px;">background-image: url('clouds.jpg')</p>
+    <p>
+        &lt;picture&gt;<br>
+            &lt;source media="(min-width: 650px)" srcset="img_pink_flowers.jpg"&gt;<br>
+            &lt;source media="(min-width: 465px)" srcset="img_white_flower.jpg"&gt;<br>
+            &lt;img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto"&gt;<br>
+        &lt;/picture&gt;<br>
+        0-465px: orange flower, 465px-650px: white flower, >650px: pink flower
+    </p>
+    <picture>
+        <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+        <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+        <img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto">
+    </picture>
+    <table class=“tables1" style="width: 100%; border:1px solid black; border-spacing: 10px;"  >
+        <tr>
+            <th>tr (table row)</th>
+            <th>th (table heading) center and bold</th>
+        </tr>
+        <tr>
+            <td>td will be left</td>
+            <td>width:100%</td>
+        </tr>
+        <tr>
+            <td>table,th,td {border:1px solid black},border is 2 lines</td>
+            <td>border-collapse:collapse, border is 1 line</td>
+        </tr>
+        <tr>
+            <td>padding:15px;</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>border-spacing: 5px;</td>
+            <td>border-spacing has no effect if table collapsed border</td>
+        </tr>
+        <tr>
+            <td>colspan=</td>
+        </tr>
+    </table>
+</body>
+</html>
