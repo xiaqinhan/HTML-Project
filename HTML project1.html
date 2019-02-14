@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><table class=“tables1" style="width: 100%; border:1px solid black; border-spacing: 10px; background-color: #f1f1c1" ><table class=“tables1" style="width: 100%; border:1px solid black; border-spacing: 10px; background-color: #f1f1c1" ></table>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -27,14 +27,17 @@
     a.links2:hover, a.links2:active {
         background-color: blue;
     }
-    .tables1 table, th, td {
+    #tables1 th, #tables1 td {
         border: 1px solid black;
     }
-    .tables1 th,td {
+    #tables1 th, #tables1 td {
         padding: 15px;
     }
-    table.tables1  {
-        border-spacing: 5px;
+    table#tables1 tr:nth-child(even) {
+        background-color: yellow;
+    }
+    table#tables1 tr:nth-child(odd) {
+        background-color: red;
     }
     </style>
 </head> 
@@ -100,10 +103,11 @@
         <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
         <img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto">
     </picture>
-    <table class=“tables1" style="width: 100%; border:1px solid black; border-spacing: 10px;"  >
+    <table id="tables1" style="width: 100%; border-spacing: 10px;">
+        <caption>&lt;caption&gt; tag must be inserted immediately after the &lt;table&gt; tag. auto center.</caption>
         <tr>
             <th>tr (table row)</th>
-            <th>th (table heading) center and bold</th>
+            <th>th (table heading) auto center and bold</th>
         </tr>
         <tr>
             <td>td will be left</td>
@@ -113,7 +117,7 @@
             <td>table,th,td {border:1px solid black},border is 2 lines</td>
             <td>border-collapse:collapse, border is 1 line</td>
         </tr>
-        <tr>
+        <tr> 
             <td>padding:15px;</td>
             <td></td>
         </tr>
@@ -122,7 +126,14 @@
             <td>border-spacing has no effect if table collapsed border</td>
         </tr>
         <tr>
-            <td>colspan=</td>
+            <td colspan="2">colspan="2"</td>
+        </tr>
+        <tr>
+            <td rowspan="2">rowspan="2"</td>
+            <td>rowspan works on 2 td behind</td>
+        </tr>
+        <tr>
+            <td>table tr:nth-child(even/odd) {background-color: yellow/red}</td>
         </tr>
     </table>
 </body>
