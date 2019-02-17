@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Project 1</title>
-    <meta http-equiv="refresh" content="3">
+    <meta http-equiv="refresh" content="10">
     <style>
     a.links1:link {
         color: green;
@@ -27,7 +27,11 @@
     a.links2:hover, a.links2:active {
         background-color: blue;
     }
-    #tables1 th, #tables1 td {
+    #tables1 {
+        border-spacing: 10px;
+        width: 100%;
+    }
+    #tables1, #tables1 th, #tables1 td {
         border: 1px solid black;
     }
     #tables1 th, #tables1 td {
@@ -39,6 +43,134 @@
     table#tables1 tr:nth-child(odd) {
         background-color: red;
     }
+    ul#lists1 {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow:hidden;
+        background-color: #333333;
+    }
+    ul#lists1 li {
+        float: left;
+    }
+    ul#lists1 li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+    }
+    ul#lists1 li a:hover {
+        background-color: red;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    #layoutheader {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        color: white;
+    }
+    #layoutsection {
+        display: flex;
+    }
+    #layoutsection nav {
+        flex: 1;
+        background:#ccc;
+        padding: 20px;
+    }
+    #layoutsection nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #layoutsection article {
+        flex: 1;
+        background-color: #f1f1f1;
+        padding: 10px;
+    }
+    #layoutfooter {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    @media (max-width:600px) {
+        #layoutsection {
+            flex-direction: column;
+        }
+    }
+    #layoutheader1 {
+        background-color: #666;
+        padding: 30px;
+        text-align: center;
+        color: white;
+    }
+    #layoutsection1 nav {
+        float: left;
+        width:50%;
+        height: 200px;
+        background:#ccc;
+        padding: 20px;
+    }
+    #layoutsection1 nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    #layoutsection1 article {
+        float: left;
+        padding: 20px;
+        width: 50%;
+        background-color: #f1f1f1;
+        height: 200px;
+    }
+    #layoutsection1 {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    #layoutfooter1 {
+        background-color: #777;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    @media (max-width:600px) {
+        #layoutsection1 nav, #layoutsection1 article {
+            width: 100%;
+            height: auto;
+        }
+    }
+    #responsivemenu {
+        float: left;
+        width: 60%;
+        text-align: center;
+    }
+    #responsivemenu a {
+        background-color: #e5e5e5;
+
+        margin-top: 7px;
+        display: block;
+        width: 100%;
+        color: black;
+    }
+    #responsivemain {
+        float: left;
+        width: 10%;
+    }
+    #responsiveright {
+        background-color: #e5e5e5;
+        float: left;
+        width: 30%;
+
+        margin-top: 7px;
+        text-align: center;
+    }
+    @media only screen and (max-width:600px) {
+        #responsivemenu, #responsivemain, #responsiveright {
+            width: 100%;
+        }
+    }
     </style>
 </head> 
 <body style="height:10000px;">
@@ -46,10 +178,6 @@
     <h1 style="font-size: 300%;">font-size: 300%</h1>
     <h1>&lt;h1&gt; defines the most important heading</h1>
     <h6>&lt;h6&gt; defines the least important heading</h6>
-    <pre>
-        &lt;pre&gt; element defines
-        preformatted text.
-    </pre>
     <p style="font-family: courier;">font-family:courier</p>
     <b>&lt;b&gt;bold</b><br>
     <strong>&lt;strong&gt;</strong><br>
@@ -90,20 +218,7 @@
         <area shape="circle" coords="337,300,44" href="#" alt="Cup of coffee">
     </map>
     <p style="background-image: url('clouds.jpg'); height:100px;">background-image: url('clouds.jpg')</p>
-    <p>
-        &lt;picture&gt;<br>
-            &lt;source media="(min-width: 650px)" srcset="img_pink_flowers.jpg"&gt;<br>
-            &lt;source media="(min-width: 465px)" srcset="img_white_flower.jpg"&gt;<br>
-            &lt;img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto"&gt;<br>
-        &lt;/picture&gt;<br>
-        0-465px: orange flower, 465px-650px: white flower, >650px: pink flower
-    </p>
-    <picture>
-        <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
-        <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
-        <img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto">
-    </picture>
-    <table id="tables1" style="width: 100%; border-spacing: 10px;">
+    <table id="tables1">
         <caption>&lt;caption&gt; tag must be inserted immediately after the &lt;table&gt; tag. auto center.</caption>
         <tr>
             <th>tr (table row)</th>
@@ -136,5 +251,236 @@
             <td>table tr:nth-child(even/odd) {background-color: yellow/red}</td>
         </tr>
     </table>
+    <ul>
+        <li>&lt;ul&gt;&lt;li&gt;</li>
+        <li>&lt;ul style="list-style-type:disc (defualt) / circle / square / none;"&gt; </li>
+    </ul>
+    <ol>
+        <li>&lt;ol&gt;&lt;li&gt;</li>
+        <li>&lt;ol type="1/A/a/I/i&gt;</li>
+    </ol>
+    <ol start="50">
+        <li>&lt;ol start="50"&gt; (default type="1")</li>
+    </ol>
+    <ol type="I" start="3">
+        <li>&lt;ol type="I" start="3"&gt;</li>
+    </ol>
+    <dl>
+        <dt>&lt;dl&gt;(description list) dl>dt+dd+dt+dd</dt>
+        <dt>&lt;dt&gt;</dt>
+        <dd>&lt;dd&gt;</dd>
+        <dt>&lt;dt&gt;</dt>
+        <dd>&lt;dd&gt;</dd>
+    </dl>
+    <ul>
+        <li>Nested HTML List</li>
+        <ul>
+            <li>ul>li>ul>li</li>
+        </ul>
+    </ul>
+    <ul id="lists1">
+        <li><a href="#">ul>li*5>a</a></li>
+        <li><a href="#">ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333;}</a></li>
+        <li><a href="#">li {float:left}</a></li>
+        <li><a href="#">li a {display:block; color:white; text-align:center; padding: 16px; text-decoration: none;} </a></li>
+        <li><a href="#">li a:hover {background-color: red;}</a></li>
+    </ul>
+    <p>&lt;iframe src="https://www.baidu.com" frameborder="0" width="100%" name="iframe_a"&gt;</iframe></p>
+    <p><a href="https://www.w3schools.com" target="iframe_a">&lt;a href="https://www.w3schools.com" target="iframe_a"&gt;</a></p>
+    <p>&lt;img src="/images/picture.jpg" or "images/picture.jpg" or "../images/picture.jpg" alt="Mountain"></p>
+    <p>&lt;title>HTML Project1></p> 
+    <p>&lt;link rel="stylesheet" href="#"> external style sheets</p>
+    <p>&lt;meta charset="UTF-8"></p>
+    <p>&lt;meta name="description" content="Free Web tutorials"></p>
+    <p>&lt;meta name="keywords" content="HTML, CSS, XML, JavaScript"></p>
+    <p>&lt;meta name="author" content="John Doe"></p>
+    <p>&lt;meta http-equiv="fresh" content="30"></p>
+    <p>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"></p>
+    <p>&lt;base href="https://www.w3schools.com" target="_blank"></p>
+    <p>
+        &lt;picture&gt;<br>
+            &lt;source media="(min-width: 650px)" srcset="img_pink_flowers.jpg"&gt;<br>
+            &lt;source media="(min-width: 465px)" srcset="img_white_flower.jpg"&gt;<br>
+            &lt;img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto"&gt;<br>
+        &lt;/picture&gt;<br>
+        0-465px: orange flower, 465px-650px: white flower, >650px: pink flower
+    </p>
+    <picture>
+        <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+        <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+        <img src="img_orange_flowers.jpg" alt="Flowers" style="width: auto">
+    </picture>
+    <header id="layoutheader">
+        <p>CSS Layout Flexbox</p>
+        <h3>header>h3 , header {background-color: #666; padding:30px; text-align: center; color: white;}</h3>
+    </header>
+    <section id="layoutsection">
+        <nav>
+            <ul>
+                <li><a href="">section>(nav>ul>li*5>a)+(article>p*5)</a></li>
+                <li><a href="">* {box-sizing: border-box;}</a></li>
+                <li><a href="">section {display: flex;}</a></li>
+                <li><a href="">nav {flex: 1; background: #ccc; padding: 20px;} the ratio is 1:1</a></li>
+                <li><a href="">nav ul {list-style-type: none; padding: 0;}</a></li>
+            </ul>
+        </nav>
+        <article>
+            <p>article {flex: 1; background-color: #f1f1f1; padding: 10px;}</p>
+            <p></p>
+            <p></p>
+        </article>
+    </section>
+    <footer id="layoutfooter">
+        <p>footer {background-color: #777; padding: 10px; text-align: center; color: white;}</p>
+        <p>@media (max-width: 600px) {section {flex-direction: column; } }</p>
+    </footer><br>
+    <header id="layoutheader1">
+            <p>CSS Layout Float</p>
+            <h3>header>h3 , header {background-color: #666; padding:30px; text-align: center; color: white;}</h3>
+        </header>
+        <section id="layoutsection1">
+            <nav>
+                <ul>
+                    <li><a href="">section>(nav>ul>li*5>a)+(article>p*5)</a></li>
+                    <li><a href="">* {box-sizing: border-box;}</a></li>
+                    <li><a href="">section:after {content: ""; display: table; clear: both;}</a></li>
+                    <li><a href="">nav {float:left; width:50%; height: 300px; background: #ccc; padding: 20px;}</a></li>
+                    <li><a href="">nav ul {list-style-type: none; padding: 0;}</a></li>
+                </ul>
+            </nav>
+            <article>
+                <p>article {float: left; width: 50%; background-color: #f1f1f1; padding: 10px; height: 300px;}</p>
+                <p></p>
+                <p></p>
+            </article>
+        </section>
+        <footer id="layoutfooter1">
+            <p>footer {background-color: #777; padding: 10px; text-align: center; color: white;}</p>
+            <p>@media (max-width: 600px) {nav, article {width: 100%; height: auto; } }</p>
+        </footer><br>
+        <div id="responsive" style="font-family: Verdana;">
+            <div style="background-color: #e5e5e5; padding: 15px; text-align: center;">
+                <p>&lt;body style="font-family: Verdana;"></p>
+                <p>&lt;div style="background-color: #e5e5e5; padding: 15px; text-align: center;"></p>
+                <p>* {box-sizing: border-box;}</p>
+            </div>
+            <div style="overflow: auto;">
+                <div id="responsivemenu">
+                    <a href="">div>((div#menu>a*3)+(div#main>p*3)+(div#right>p*3))</a>
+                    <a href="">&lt;div style="overflow: auto;"></a>
+                    <a href="">#menu {float:left; width:60%; text-align:center;}</a>
+                    <a href="">#menu a {background-color:#e5e5e5; padding:8px; margin-top:7px; display:block;width:100%; color:black;</a>
+                </div>
+                <div id="responsivemain">
+                    <p>#main {float:left; width:10%; padding:0 20px;}</p>
+                </div>
+                <div id="responsiveright">
+                    <p>#right {background-color:#e5e5e5; float: left; width:30%; padding:15px; margin-top:7px; text-align:center;}</p>
+                </div>
+            </div>
+        </div>
+            <div style="background-color: #e5e5e5; text-align: center; padding: 10px; margin-top: 7px;">
+                <p>&lt;div style="background-color: #e5e5e5; text-align: center; padding: 10px; margin-top: 7px;"></p>
+                <p>@media only screen and (max-width:620px) {#menu, #main, #right {width:100%;}}</p>
+            </div>
+           
+        <kbd>&lt;kbd> for keyboard input, Ctrl+S</kbd><br>
+        <samp>&lt;samp> for program output, Error!</samp><br>
+        <pre>
+            &lt;pre&gt; element definespreformatted text.
+                <code>&lt;code> for computer code, 
+                    x = 5;
+                    y = 6;
+                &lt;/code>
+            &lt;/pre>
+                </code>
+            </pre> 
+        <code>&lt;code> for computer code, x = 5</code><br>
+        <var>&lt;var> for variables, &lt;sup>2&lt;/sup> E=mc<sup>2</sup></var>
+        <p>  non-breaking space &amp;nbsp;<br>&lt; less than &amp;lt;<br>&gt; greater than &amp;gt;<br>
+            &amp; ampersand &amp;amp;<br>&quot; double quotation mark &amp;quot;<br>
+            &copy; copyright &amp;copy; 
+        </p>
+        <p>
+            scheme://prefix.domain:port/path/filename <br>
+            https://www.w3schools.com/html/default.asp
+        </p>
+        <form action="">
+            <fieldset>
+                <legend>&lt;fieldset>&lt;legend></legend>
+                &lt;form action=""> novalidate<br>
+                target="_blank/_parent/_top"<br>
+                method="get/post"  get:visible in the page address field;<br>
+                &lt;input type="text" name="firstname" value="if the name attribute is omitted, .."<br>
+                size="80" readonly/disable maxlength="10" autocomplete="off" autofocus <br>
+                pattern="[A-Za-z]{3}" title="Three leter country code" placeholder="" required><br>
+                <input type="text" name="firstname" value="if the name attribute is omitted, the data of that input field will not be sent at all" size="80"><br>
+                &lt;input type="radio" name="gender" value="male" checked>Male&lt;br><br>
+                <input type="radio" name="gender" value="male" checked>Male<br>
+                &lt;input type="submit" value="Submit"><br>
+                <input type="submit" value="Submit"><br>
+                &lt;select name="cars"><br>
+                &lt;option value="volvo">Volvo&lt;/option>&lt;option value="audi" selected>Audi&lt;/option> <br>
+                <select name="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="audi" selected>Audi</option>
+                </select><br>
+                &lt;select name="cars" size="2" multiple><br>
+                &lt;option value="volvo">Volvo&lt;/option>&lt;option value="audi" selected>Audi&lt;/option> <br>
+                <select name="cars" size="2" multiple>
+                    <option value="volvo">Volvo</option>
+                    <option value="audi" selected>Audi</option>
+                </select><br>
+                <textarea name="message" cols="50" rows="2">&lt;textarea name="message" cols="50" rows="2"> style="width:400px; height:30px;"</textarea><br>
+                <button type="button" onclick="alert('Hello Word')">&lt;button type="button" onclick="alert('Hello Word')"></button><br>
+                &lt;input list="browsers" name="browser"><br>
+                &lt;datalist id="browsers"><br>
+                    &lt;option value="Internet Explorer">&lt;/option>
+                    &lt;option value="Chrome">&lt;/option>
+                </datalist><br>
+                <input list="browsers" name="browser">
+                <datalist id="browsers">
+                    <option value="Internet Explorer"></option>
+                    <option value="Chrome"></option>
+                </datalist><br>
+                &lt;input type="password" name="psw"><br>
+                <input type="password" name="psw"><br>
+                &lt;input type="reset"><br>
+                <input type="reset"><br>
+                <input type="checkbox" name="vehicle1" value="bike">&lt;input type="checkbox" name="vehicle1" value="bike"><br>
+                <input type="color" name="favcolor">&lt;input type="color" name="favcolor"><br>
+                <input type="date" name="bday" max="1979-12-31">&lt;input type="date" name="bday" max/min="1979-12-31"><br>
+                <input type="datetime-local" name="bdaytime">&lt;input type="datetime-local" name="bdaytime"><br>
+                <input type="email" name="email">&lt;input type="email" name="email"><br>
+                <input type="file" name="myFile" multiple>&lt;input type="file" name="myFile" multiple><br>
+                <input type="time" name="usr_time">&lt;input type="time" name="usr_time"><br>
+                <input type="url" name="homepage">&lt;input type="url" name="homepage"><br>
+                <input type="week" name="week_year">&lt;input type="week" name="week_year"><br>
+                <input type="submit" formaction="" value="&lt;input type=&quot;submit&quot; formaction=&quot;&quot; value=&quot;&quot; formmethod=&quot;POST/GET&quot; formnovalidate formtarget=&quot;_blank&quot;>"><br>
+                <input type="submit" formenctype="multipart/form-data" value="input type=&quot;submit&quot; formenctype=&quot;multipart/form-data&quot; value=&quot;only for forms with method=&quot;post&quot;&quot;"><br>
+                &lt;input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"><br>
+                <input type="number" name="quantity" min="1" max="5">&lt;input type="number" name="quantity" min="1" max="5" step="2"><br>
+                <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+                &lt;input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code">
+
+
+
+            </fieldset>
+        </form>
+        &lt;form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)"><br>
+            0 &lt;input type="range" id="a" name="a" value="50"><br>
+            100 + &lt;input type="number" id="b" name="b" value="50">=<br>
+            &lt;output name="x" for="a b"></output>
+            &lt;input type="submit">
+        <form action="/action_page.php" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            0 <input type="range" id="a" name="a" value="50">
+            100 + <input type="number" id="b" name="b" value="50">=
+            <output name="x" for="a b"></output>
+            <input type="submit">
+        </form>
+        <p>
+            &lt;form action="" id="form1">&lt;/form><br>
+            &lt;input type=&quot;text" name="lname" form="form1">
+        </p>
 </body>
 </html>
