@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Project 1</title>
-    <meta http-equiv="refresh" content="10">
+    <meta http-equiv="refresh" content="30">
     <style>
     a.links1:link {
         color: green;
@@ -170,6 +170,9 @@
         #responsivemenu, #responsivemain, #responsiveright {
             width: 100%;
         }
+    }
+    newelement {
+        color: red;
     }
     </style>
 </head> 
@@ -482,5 +485,67 @@
             &lt;form action="" id="form1">&lt;/form><br>
             &lt;input type=&quot;text" name="lname" form="form1">
         </p>
+        <newelement>&lt;newelement>&lt;/newelement> newelement {color:red;}</newelement>
+        <figure>
+            <img src="pic_trulli.jpg" alt="Trulli" width="100px">
+            <figcaption>&lt;figure> &lt;img src="pic_trulli.jpg" alt="Trulli" width="100px"> &lt;figcaption>&lt;/figcaption> &lt;/figure></figcaption>
+        </figure>
+        <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.
+        </canvas>
+        <br>&lt;canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"> our browser does not support the HTML5 canvas tag. &lt;/canvas> <br>
+        <canvas id="myCanvas1" width="200" height="100" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>            
+        <script>
+            var c = document.getElementById("myCanvas1");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(95,50,40,0,2*Math.PI);
+            ctx.stroke();
+        </script> <br>
+        &lt;script> var c = document.getElementById("myCanvas1"); var ctx = c.getContext("2d"); ctx.beginPath(); ctx.arc(95,50,40,0,2*Math.PI); ctx.stroke(); &lt;/script>  <br>
+        <canvas id="myCanvas2" width="200" height="100" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>    
+        <script>
+            var c = document.getElementById("myCanvas2");
+            var ctx = c.getContext("2d");
+            ctx.font = "30px Arial";
+            ctx.fillText("Hello World",10,50);
+        </script> <br>
+        &lt;script> var c = document.getElementById("myCanvas2"); var ctx = c.getContext("2d"); ctx.font = "30px Arial"; ctx.fillText/strokeText("Hello World",10,50); &lt;/script> <br>
+        <canvas id="myCanvas3" width="200" height="100" style="border:1px solid #d3d3d3;">
+            Your browser does not support the HTML5 canvas tag.</canvas>
+        <script>
+            var c = document.getElementById("myCanvas3");
+            var ctx = c.getContext("2d");
+            var grd = ctx.createLinearGradient(0,0,200,0);
+            grd.addColorStop(0,"red");
+            grd.addColorStop(1,"white");
+            ctx.fillStyle = grd;
+            ctx.fillRect(10,10,150,80);
+        </script> <br>
+        &lt;script> var c = document.getElementById("myCanvas3"); var ctx = c.getContext("2d"); var grd = ctx.createLinearGradient(0,0,200,0) or var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100); grd.addColorStop(0,"red"); grd.addColorStop(1,"white"); ctx.fillStyle = grd; ctx.fillRect(10,10,150,80);
+        &lt;/script> <br>
+        <video width="320" height="240" controls>
+            <source src="movie.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video> <br>
+        &lt;video width="320" height="240" controls autoplay > &lt;source src="movie.mp4" type="video/mp4"> &lt;source src="movie.ogg" type="video/ogg"> Your browser does not support the video tag.&lt;/video> <br>
+        <audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        &lt;audio controls> &lt;source src="horse.ogg" type="audio/ogg"> &lt;source src="horse.mp3" type="audio/mpeg"> Your browser does not support the audio element. &lt;/audio> <br>
+        <object width="400" height="50" data="bookmark.swf"></object> <br>
+        &lt;object/embed width="400" height="50" data="bookmark.swf/snippet.html/audi.jpg/"><br>
+        <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+        </iframe> <br>
+        &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"> &lt;/iframe> <br>
+        &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1"> &lt;/iframe> <br>
+        &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?loop=1"> &lt;/iframe> <br>
+        &lt;iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0"> &lt;/iframe> <br>
 </body>
 </html>
