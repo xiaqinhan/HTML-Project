@@ -4,11 +4,161 @@
 	<meta charset="UTF-8">
     <title>CSS Project1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="3">
+    <meta http-equiv="refresh" content="30">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
 integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+        a#links1:link, a#links2:visited {
+            background-color: powderblue;
+            padding: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        a:hover, a:active {
+            background-color: yellow;
+        }
+        ul#lists1 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow:hidden;
+            background-color: #333333;
+        }
+        ul#lists1 li {
+            float: left;
+        }
+        ul#lists1 li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        ul#lists1 li a:hover {
+            background-color: red;
+        }
+        ul#lists2 {
+            background: pink; 
+            padding: 20px; 
+            border: 5px solid powderblue;
+        }
+        ul#lists2 li {
+            background: powderblue; 
+            padding: 5px; 
+            margin: 5px; 
+            border-bottom: 2px solid red;
+        }
+        ul#lists2 li:last-child {
+            border-bottom: none;
+        }
+        #tables1 {
+            border-spacing: 10px;
+            width: 100%;
+        }
+        #tables1, #tables1 th, #tables1 td {
+            border: 1px solid black;
+        }
+        #tables1 th, #tables1 td {
+            padding: 15px;
+        }
+        table#tables1 tr:nth-child(even) {
+            background-color: powderblue;
+        }
+        table#tables1 tr:nth-child(odd) {
+            background-color: pink;
+        }
+        table#tables1 tr:hover {
+            background-color: yellow;
+        }
+        table#tables1 th {
+            background-color: yellow;
+            height: 50px;
+        }
+        #display1 li {
+            display: inline;
+        }
+        #display2 li {
+            display: block;
+        }
+        .display3 {
+            float: left;
+            width: 325px;
+            border: 1px solid black;
+            margin: 4px;
+            padding: 6px;
+        }
+        .display4 {
+            width: 100%;
+        } 
+        #position1 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+        #position2 {
+            position: relative;
+        }
+        #position2 img {
+            width: 100%;
+            height: 300px;
+            opacity: 0.3;
+        }
+        #position3 {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+        #position4 {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+        #position5 {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+        }
+        #position6 {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+        }
+        #position7 {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+        }
+        #position8 {
+            position: absolute;
+            clip: rect(0px,60px,200px,0px);
+        }
+        * {
+            box-sizing: border-box;
+        }
+        #float1::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        #float1 ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        #float1 li {
+            padding: 8px;
+            margin-bottom: 8px;
+            background-color: lightblue;
+        }
+        #float1 li:hover {
+            background-color: red;
+        }
+    </style>
 </head> 
-<body style="height:5000px">
+<body style="height:10000px">
     selector {declaration (property:value) } : h1 {color:blue}<br>
     <p style="background-image: url('gradient_bg.png'); height:200px; background-repeat: repeat-x;">
         p {<br>background-color: #ffffff; <br> background-image: url('gradient_bg.png');<br>background-repeat: repeat-x/repeat-y/no-repeat/;<br>background-position: right top; <br>background-attachment: fixed; <br>background: #ffffff url("img_tree.png") no-repeat top right;<br> }
@@ -81,10 +231,224 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
     <p style="font-variant: small-caps;">p {font-variant: normal/small-caps;}</p>
     <p style="font: italic bold 12px/60px georgia,serif; background-color: powderblue">p {italic bold 12px/60px Georgia, serif} <br>font-style font-weight font-size/line-height font-family</p>
     <p>font Awesome Icons <br> &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" <br> integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous"></p>
-    <p>&lt;i class="fas fa-home"> &lt;i class="fas fa-home" style="font-size:48px; color:red;"></p>
+    <p>&lt;i class="fas fa-home"> &lt;i class="fas fa-home" style="font-size: 48px; color: red;"> .fa-home:hover {color: red; }</p>
     <i class="fas fa-home"></i> <i class="fas fa-home" style="font-size: 48px; color: red;"></i>
     <p>Bootstrap Icons <br> &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></p>
     <p>Goole Icons <br> &lt;link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></p>
     <p>icons reference <br> https://www.w3schools.com/icons/icons_reference.asp</p>
+    <a id="links1" href="https://www.baidu.com" target="_blank">
+        &lt;a href="https://www.baidu.com" target="_blank"> <br> a:link, a:visited { <br> padding: 15px;<br> text-decoration: none; <br>
+        display: inline-block; <br>} <br> a:hover, a:active { <br> background-color: yellow; <br> }
+    </a>
+    <p style="cursor: help">p {cursor: auto/crosshair/default/e-resize/help/move/n-resize/pointer/progress/s-resize/se-resize/text/w-resize/wait; }</p>
+    <ul>
+        <li>&lt;ul&gt;&lt;li&gt;</li>
+    </ul>    
+    <ul style="list-style-image: url('sqpurple.gif')">
+        <li>ul { <br> list-style-type: disc (defualt) / circle / square / none ( also add margin: 0; padding:0;) / ; <br> list-style-image: url('sqpurple.gif');</li>
+    </ul>
+    <ul style="list-style-position: outside;"><li>list-style-position: outside; </li></ul>
+    <ul style="list-style-position: inside;"><li>list-style-position: inside;</li></ul>
+    <ul style="list-style: square inside url('sqpurple.gif');"><li>list-style: square inside url('sqpurple.gif'); <br> } </li></ul>
+    <ol>
+        <li>&lt;ol&gt;&lt;li&gt;</li>
+        <li>&lt;ol type="1 / A / a / I / i / upper-roman / lower-alpha;&gt;</li>
+    </ol>
+    <ol start="50">
+        <li>&lt;ol start="50"&gt; (default type="1")</li>
+    </ol>
+    <ol type="I" start="3">
+        <li>&lt;ol type="I" start="3"&gt;</li>
+    </ol>
+    <ul>
+        <li>Nested HTML List</li>
+        <ul>
+        <li>ul>li>ul>li</li>
+        </ul>
+    </ul>
+    <ul id="lists1">
+        <li><a href="#">ul>li*5>a</a></li>
+        <li><a href="#">ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333;}</a></li>
+        <li><a href="#">li {float:left}</a></li>
+        <li><a href="#">li a {display:block; color:white; text-align:center; padding: 16px; text-decoration: none;} </a></li>
+        <li><a href="#">li a:hover {background-color: red;}</a></li>
+    </ul>
+    <ul id="lists2">
+        <li>ul {background: pink; padding: 20px; border: 5px solid powderblue; }</li>
+        <li>ol li {background: powderblue; padding: 5px; margin: 5px; }</li>
+        <li>ul li:last-child {border-bottom: none; }</li>
+    </ul>
+    <table id="tables1">
+        <caption>&lt;caption&gt; tag must be inserted immediately after the &lt;table&gt; tag. auto center. <br>caption {caption-side: bottom;}</caption>
+        <tr>
+            <th>tr (table row)</th>
+            <th>th (table heading) auto center and bold</th>
+        </tr>
+        <tr>
+            <td>td will be left</td>
+            <td>width:100%</td>
+        </tr>
+        <tr>
+            <td>table,th,td {border:1px solid black},border is 2 lines</td>
+            <td>border-collapse:collapse, border is 1 line</td>
+        </tr>
+        <tr> 
+            <td>padding:15px;</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>border-spacing: 5px;</td>
+            <td>border-spacing has no effect if table collapsed border</td>
+        </tr>
+        <tr>
+            <td colspan="2">colspan="2"</td>
+        </tr>
+        <tr>
+            <td rowspan="2">rowspan="2"</td>
+            <td>rowspan works on 2 td behind</td>
+        </tr>
+        <tr>
+            <td>table tr:nth-child(even/odd) {background-color: yellow/red; }</td>
+        </tr>
+        <tr>
+            <td>table tr:hover {background-color: yellow; }</td>
+            <td>table th {background-color: yellow; height: 50px;; }</td>
+        </tr>
+        <tr>
+            <td>td {vertical-align: center;}</td>
+            <td>&lt;div style="overflow-x: auto;"></td>
+        </tr>
+    </table>
+    <ul id="display1" >
+        <li><a href="">ul>li>a</a></li>
+        <li><a href="">li {display: inline;}</a></li>
+    </ul>
+    <ul id="display2">
+        <li><a href="">ul>li>a</a></li>
+        <li><a href="">li {display: block;/none;}</a></li>
+        <li><a href="">remove the list-style-type</a></li>
+        <li><a href="">h1 {visibility: hidden;} hidden still takes up space.</a></li>
+    </ul>
+    <div class="display3" id="display5">&lt;div class="imgbox" id="imgbox1">
+        <img src="pic_trulli.jpg" alt="trulli" style="width: 100%;">
+        <button class="display4" onclick="removeelement()">&lt;button onclick="removeelement()"> <br> function removeelement() { <br>document.getElementById("imgbox1").style.display = "none";<br> }</button>
+    </div>
+    <div class="display3" id="display6">&lt;img src="pic_trulli.jpg" alt="trulli" style="width: 100%;">
+        <img src="pic_trulli.jpg" alt="trulli" style="width: 100%;">
+        <button class="display4" onclick="changevisibility()">function changevisibility() { <br>document.getElementById("imgbox2").style.visibility = "hidden"; <br> }</button>
+    </div>
+    <div class="display3">.imgbox {float: left; width: 120px; border: 1px solid black; margin: 4px; padding: 6px;}
+        <img src="pic_trulli.jpg" alt="trulli" style="width: 100%;">
+        <button class="display4" onclick="resetelement()">function resetelement() { <br>document.getElementById("imgbox1").style.display = "block"; <br>document.getElementById("imgbox2").style.visibility = "visible"; <br> }</button>
+    </div>
+    <script>
+        function removeelement() {
+            document.getElementById("display5").style.display = "none";
+        }
+        function changevisibility() {
+            document.getElementById("display6").style.visibility = "hidden";
+        }
+        function resetelement() {
+            document.getElementById("display5").style.display = "block"
+            document.getElementById("display6").style.visibility = "visible";
+        }
+    </script>
+    div {position: static; (defult) not affected by the top/bottom/left/right properties}
+    <div style="position: relative; left: 50px; width: 970px; height: 160px; border: 3px solid black; ">
+        ------------------------------div {position: relative; left: 50px; width: 800px; height: 200px; border: 3px solid black; } <br>
+        ------------------------------div {position: fixed; bottom: 0; right: 0; width: 300px; border: 3px solid black; } <br>
+        ------------------------------div {position: sticky; top: 0; border: 3px solid black; } <br>
+        ------------------------------&lt;img id="position1" src="w3css.gif" alt="w3css" width="200" height="150">;
+        <img id="position1" src="w3css.gif" alt="w3css" width="200" height="150">
+        <div style="position: absolute; top: 90px; right: 0; width: 770px; height: 60px; border: 3px solid black;">div {position: absolute; top: 50px; right: 0; width: 200px; height: 100px; border: 3px solid black; } </div>
+    </div>
+    <br>
+    <div id="position2">
+        <img src="pic_trulli.jpg" alt="trulli">
+        <div id="position3">&lt;div class="container"><br>&lt;img src="pic_trulli.jpg" alt="trulli"><br>&lt;div class="topleft"> </div>
+        <div id="position4">.container { position:relative; } </div>
+        <div id="position5">img {<br> width: 100%; height: auto;<br> opacity: 0.3; }</div>
+        <div id="position6">.bottomright {<br> position: absolute;<br> bottom: 8px; right: 16px; }</div>
+        <div id="position7">.center { <br>position: absolute; left: 0; top: 50%;<br> width: 100%; text-align: center;}</div>
+    </div> <br>
+    <p>img {position: absolute; clip: rect(0px,60px,200px,0px);} &lt;shape> = rect(&lt;top>,&lt;right>,&lt;bottom>,&lt;left>)</p>
+    <p><img id="position8" src="pic_trulli.jpg" alt="trulli" width="140px" height="140px"></p> <br> <br> <br> <br> <br> <br> <br>
+    <div style="background-color: #eee; width: 550px; height: 43px; border: 1px solid black; overflow: visible;">
+        div { <br>background-color: #eee; <br> width: 200px; <br> height: 50px; <br> border: 1px solid black;<br> overflow / overflow-x / overflow-y : visible / hidden / scroll / auto;"<br> }
+    </div> <br><br><br><br><br>
+    <img src="pic_trulli.jpg" alt="trulli" style="width: 170px; height: 170px; margin-left: 15px; float: left;">
+    <p style="border: 1px solid black;">&lt;img src="pic_trulli.jpg" alt="trulli" style="width: 170px; height: 170px; margin-left: 15px; float: right / left / none;</p>
+    <p style="clear:both;">clear: both;"></p>
+    <div style="border: 1px solid green; overflow: auto;">
+        <img src="pic_trulli.jpg" alt="trulli" style="width: 170px; height: 170px; margin-left: 15px; float: left;">
+        &lt;div id="clearfix"> <br>
+        #clearfix {border: 1px solid green; overflow: auto;} <br>
+        #clearfix::after {content = ""; clear: both; display: table; } <br>
+        &lt;img src="pic_trulli.jpg" alt="trulli" style="width: 170px; height: 170px; margin-left: 15px; float: right / left / none;> <br>
+    </div> <br> <br>
+    <div style="background-color: grey; color: white; padding: 15px;">
+        header {background-color: grey; color: white; padding: 15px;}
+    </div>
+    <div id="float1">
+        <div style="float: left; padding: 15px; width: 45%;">
+            <ul>
+                <li>&lt;div class="clearfix"></li>
+                <li>&lt;div class="column menu"></li>
+                <li>ul>li*5</li>
+                <li>.column {float: left; padding: 15px;}</li>
+                <li>.menu {width: 45%;}</li>
+                <li>.menu ul {list-style-type: none; margin: 0; padding: 0; }</li>
+                <li>.menu li {padding: 8px; margin-bottom: 8px; background-color: lightblue;}</li>
+                <li>.menu li:hover {background-color: red;}</li>
+            </ul>
+        </div>
+        <div style="float: left; padding: 15px; width: 55%;">
+                &lt;div class="column content"> <br>div {float: left; padding: 15px; width: 55%;} <br> .content {width: 55%;}
+        </div>
+    </div>
+    <div style="background-color: grey; color: white; padding: 15px;">
+        footer {background-color: grey; color: white; padding: 15px;}
+    </div> <br>
+    <div style="border: 1px solid black; text-align: center; width: 540px;">
+        <img src="w3css.gif" alt="w3css" width="100" height="100"><br> &lt;div style="border: 1px solid black; text-align: center; width: 540px;"><br> &lt;img src="w3css.gif" alt="w3css" width="100" height="100">&lt;br>
+    </div>
+    <span style="float: left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%;">s</span>pan {float:left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
