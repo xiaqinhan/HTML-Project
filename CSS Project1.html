@@ -14,7 +14,7 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
             text-decoration: none;
             display: inline-block;
         }
-        a:hover, a:active {
+        a#links1:hover, a#links1:active {
             background-color: yellow;
         }
         ul#lists1 {
@@ -26,6 +26,10 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
         }
         ul#lists1 li {
             float: left;
+            border-right: 1px solid white;
+        }
+        ul#lists1 li:last-child {
+            border-right: none;
         }
         ul#lists1 li a {
             display: block;
@@ -34,8 +38,11 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
             padding: 16px;
             text-decoration: none;
         }
-        ul#lists1 li a:hover {
+        ul#lists1 li a:hover:not(#lists3) {
             background-color: red;
+        }
+        #lists3 {
+            background-color: powderblue;
         }
         ul#lists2 {
             background: pink; 
@@ -51,6 +58,7 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
         ul#lists2 li:last-child {
             border-bottom: none;
         }
+        
         #tables1 {
             border-spacing: 10px;
             width: 100%;
@@ -156,9 +164,140 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
         #float1 li:hover {
             background-color: red;
         }
+        #pseudo1 p {
+            visibility: hidden;
+            background-color: yellow;
+            padding: 20px;
+        }
+        #pseudo1:hover p {
+            visibility: visible;
+        }
+        #pseudo2 p:first-child {
+            color: red;
+        }
+        #pseudo3 q:lang(no) {
+            quotes: "~" "~";
+        }
+        #pseudo4:focus {
+            background-color: yellow;
+            width: 300px;
+        }
+        #pseudo5::before {
+            content: url(smiley.gif)
+        }
+        #pseudo6::selection {
+            color: red;
+        }
+        #dropdown1 {
+            position: relative;
+            display: inline-block;
+        }
+        #dropdown2 {
+            display: none;
+            position: absolute;
+            background-color: grey;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+        #dropdown1:hover #dropdown2 {
+            display: block;
+        }
+        #dropdown3 {
+            background-color: green;
+            color: white;
+            padding: 16px;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+        }
+        #dropdown2 a {
+            padding: 12px;
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+        #dropdown1:hover #dropdown3 {
+            background-color: black;
+        }
+        #dropdown2 a:hover {
+            background-color: red;
+        }
+        #attr1[target] {
+            background-color: yellow;
+            text-decoration: none;
+        }
+        #attr2[title~=flower] {
+            background-color: powderblue;
+            text-decoration: none;
+        }
+        [class|=top1] {
+            background: yellow;
+            text-decoration: none;
+        }
+        [class^="top2"] {
+            background: powderblue;
+            text-decoration: none;
+        }
+        [class$="test1"] {
+            background: yellow;
+            text-decoration: none;
+        }
+        [class*="test2"] {
+            background: powderblue;
+        }
+        #attr3[type="text"] {
+            width: 600px;
+            display: block;
+            margin-left: 50px;
+            background-color: yellow;
+        }
+        #attr4[type=text] {
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            width: 100%;
+        }
+        #attr5[type=text] {
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            width: 60%;
+            transition: width 1s ease-in-out;
+        }
+        #attr5[type=text]:focus {
+            width: 100%;
+        }
+        #counters1 {
+            counter-reset: section;
+        }
+        #counters1 p::before {
+            counter-increment: section;
+            content: "Section " counter(section) ": ";
+        }
+        #counters1 h6 {
+            counter-reset: subsection;
+        }
+        #counters1 h6::before {
+            counter-increment: subsection;
+            content: counter(section) "." counter(subsection) " ";
+        }
+        #counters2 ol {
+            counter-reset: section1;
+            list-style-type: none;
+        }
+        #counters2 li::before {
+            counter-increment: section1;
+            content: counters(section1, ".") " ";
+        }
     </style>
 </head> 
-<body style="height:10000px">
+<body style="height:15000px">
     selector {declaration (property:value) } : h1 {color:blue}<br>
     <p style="background-image: url('gradient_bg.png'); height:200px; background-repeat: repeat-x;">
         p {<br>background-color: #ffffff; <br> background-image: url('gradient_bg.png');<br>background-repeat: repeat-x/repeat-y/no-repeat/;<br>background-position: right top; <br>background-attachment: fixed; <br>background: #ffffff url("img_tree.png") no-repeat top right;<br> }
@@ -269,9 +408,11 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
     <ul id="lists1">
         <li><a href="#">ul>li*5>a</a></li>
         <li><a href="#">ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #333333;}</a></li>
-        <li><a href="#">li {float:left}</a></li>
+        <li><a href="#">li {float:left; border-right: 1px solid white;}</a></li>
         <li><a href="#">li a {display:block; color:white; text-align:center; padding: 16px; text-decoration: none;} </a></li>
-        <li><a href="#">li a:hover {background-color: red;}</a></li>
+        <li><a href="#">li a:hover:not(.active) {background-color: red;}</a></li>
+        <li><a href="#">li:last-child {border-right: none;}</a></li>
+        <li><a href="#" id="lists3">.active {background-color: powderblue;}</a></li>
     </ul>
     <ul id="lists2">
         <li>ul {background: pink; padding: 20px; border: 5px solid powderblue; }</li>
@@ -412,24 +553,65 @@ integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zF
     <div style="border: 1px solid black; text-align: center; width: 540px;">
         <img src="w3css.gif" alt="w3css" width="100" height="100"><br> &lt;div style="border: 1px solid black; text-align: center; width: 540px;"><br> &lt;img src="w3css.gif" alt="w3css" width="100" height="100">&lt;br>
     </div>
-    <span style="float: left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%;">s</span>pan {float:left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <span style="float: left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%;">s</span>pan {float:left; width: 0.7em; font-size: 400%; font-family: algerian, courier; line-height: 80%; } <br><br><br>
+    <span style="display: inline; width: 200px; height: 200px; border: 1px solid black; background-color: yellow">span { display: inline; width: 200px; height: 200px;}</span> <span style="display: inline-block; width: 200px; height: 200px; border: 1px solid black; background-color: yellow;">span {display: inline-block; width: 200px; height: 200px;}</span><span style="display: block; width: 200px; height: 200px; padding: 5px; border: 1px solid black; background-color: yellow;">span {display: block; width: 100px; height: 200px;}</span>
+    <div style="margin: auto; width: 50%; border: 3px solid green; padding: 30px;">div {margin: auto; width: 50%;<br> text-align: center; <br>padding: 30px 0; text-align: center;</div><br>
+    <div style="line-height: 200px; height: 200px; border: 3px solid green; text-align: center"><p style="line-height: 1.5; display: inline-block; vertical-align: middle;">.center {line-height: 200px; height: 200px; text-align: center;} <br>.center p {line-height: 1.5; display: inline-block; vertical-align: middle; }</p></div><br>
+    <div style="height: 200px; position: relative; border: 3px solid green;"><p style="margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);">.center {height: 200px; position: relative;} <br> .center p {margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }</p></div>
+    <div id="pseudo1">p {display: none; background-color: yellow; padding: 20px;} <br>div:hover p {display: block;}
+        <p></p>
+    </div>
+    <div id="pseudo2">
+        <p>p:first-child/last-child i <br>p i/em/b/strong:first-child <br>p::first-line / first-letter / <br> {color: blue;} </p>
+    </div>
+    <div id="pseudo3">
+        <p><q lang="no">&lt;q lang="no"> q:lang(no) {quotes: "~" "~"; }</q></p>
+    </div>
+    <input id="pseudo4" type="text" placeholder="input:focus {background-color: yellow;}" style="width: 300px;"><br>
+    <p id="pseudo5">h1::before / after {content: url(smiley.gif); }</p>
+    <p id="pseudo6">::selection {color: red;}</p>
+    <div id="dropdown1">
+        <button id="dropdown3">
+            &lt;div class="dropdown">&lt;button class="dropbtn">&lt;div class="dropdown-content">&lt;a> <br>.dropdown {position: relative; display: inline-block; } <br>.dropbtn {background-color: black; color: white; padding: 16px; font-size: 16px; border: none; cursor: pointer; } <br>.dropdown:hover .dropbtn {background-color: black;} <br> .dropdown-content {display: none; position: absolute; background-color: grey;<br> min-width: 160px; box-shadow: 0px 8px 16px; padding: 12px 16px; z-index: 1;} <br>.dropdown: hover .dropdown-content {display: block;}
+        </button>
+        <div id="dropdown2">
+            <a href="#">.dropdown-content a {color: black; padding: 12px 16px; text-decoration: none; display: block;</a>
+            <a href="">.dropdown-content a: hover {background-color: red;}</a>  
+        </div>
+    </div><br><br>
+    <img src="img_navsprites_hover.gif" alt="navsprites"><br>
+    &lt;img src="<b>img_trans.gif</b>" width="1" hight="1"><br> img {width:46px; height:44px; background: url(<b>img_navsprites.gif</b>) 0 -45px;} <br>
+    img {width:43px; height: 44px; background: url(img_navsprites.gif) -91px -45px;} <br>
+    <img src="img_trans.gif" alt="img_trans.gif" width="1" height="1" style="width: 46px; height: 44px; background: url(img_navsprites_hover.gif) 0 -45px;">
+    <img src="img_trans.gif" alt="img_trans.gif" width="1" height="1" style="width: 43px; height: 44px; background: url(img_navsprites_hover.gif) -91px -45px;">
+    <br><a id="attr1" href="#" target="_blank">&lt;a href="#" target="_blank / _top"><br> a[target] {background-color: yellow; }</a><br>
+    <a id="attr2" href="#" title="flower" >&lt;a href="#" title="klematis flower / flower"><br> [title~=flower] {background-color: powderblue;></a><br>
+    <a href="#" class="top1-header">&lt;a class="<b>top</b>-header / <b>top</b>-text"> <br>[class|=<b>top</b>] {background: yellow;} </a><br>
+    <a href="#" class="top2-header">&lt;a class="<b>top</b>-header / <b>top</b>-text / <b>top</b>content"> <br>[class^="<b>top</b>"] {background: powderblue; }</a><br>
+    <a href="#" class="first_test1">&lt;a class="first_<b>test</b> / my-<b>test</b>"> <br>[class$="<b>test</b>"] {background: yellow; ]</a><br>    
+    <a href="#" class="first-test22">&lt;a class="first-test / my-test"> <br>[class*="te"] {background: yellow; }</a>
+    <input id="attr3" type="text" name="name" placeholder="input[type=&quot;text / button&quot;] {width: 600px; display: block; margin-left: 50px; background: yellow;}"><br>
+    <input id="attr4"  type="text" placeholder="input[type=text] { background-image: url('searchicon.png'); background-position: 10px 10px; background-repeat: no-repeat; padding: 12px 20px 12px 40px; "><br><br>
+    <input id="attr5" type="text" placeholder="width: 70%; transition: width 0.4s ease-in-out; } input[type=text]:focus {width: 100%;}">
+    <div id="counters1">
+        <p>div {counter-reset: section; }</p>
+        <p>p::before {counter-increment: section; content: "Section " counter(section) ": "; }</p>
+        <h6>h6 {counter-reset: subsection; } </h6>
+        <h6>h6::before {counter-increment: subsection; content: counter(section) "." counter(subsection) " ";</h6>
+    </div>
+    <div id="counters2">
+        <ol>
+            <li>ol {counter-reset: section; list-style-type: none; }</li>
+                <ol>
+                    <li>li::before { counter-increment: section;</li>
+                        <ol>
+                            <li>content: couters(section,".") " "; }</li>
+                        </ol>
+                </ol>
+        </ol>
+    </div>
+    
+    
 
 
 
